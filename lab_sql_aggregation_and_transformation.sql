@@ -63,7 +63,7 @@ FROM sakila.rental
 GROUP BY staff_id;
 -- 3 Using the film table, determine: 3.1 The mean film duration for each rating, and sort the results in descending order of the mean duration. Round off the average lengths to two decimal places. 
 -- This will help us identify popular movie lengths for each category.
-SELECT AVG(length), rating 
+SELECT ROUND(AVG(length),2), rating 
 FROM sakila.film
 GROUP BY rating
 ORDER BY AVG(length) DESC;
